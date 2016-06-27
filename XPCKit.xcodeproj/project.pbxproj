@@ -29,7 +29,7 @@
 		1EEDD06D13DD48BC00D5AEC3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD06B13DD48BC00D5AEC3 /* MainMenu.xib */; };
 		1EEDD07B13DD48D800D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD07913DD48D800D5AEC3 /* InfoPlist.strings */; };
 		1EEDD07E13DD48D800D5AEC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD07D13DD48D800D5AEC3 /* main.m */; };
-		1EEDD08513DD498900D5AEC3 /* com.mustacheware.TestService.xpc in Copy Services */ = {isa = PBXBuildFile; fileRef = 1EEDD07513DD48D800D5AEC3 /* com.mustacheware.TestService.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1EEDD08513DD498900D5AEC3 /* com.illumineX.TestService.xpc in Copy Services */ = {isa = PBXBuildFile; fileRef = 1EEDD07513DD48D800D5AEC3 /* com.illumineX.TestService.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1EEDD08813DD508C00D5AEC3 /* XPCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08613DD508C00D5AEC3 /* XPCConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD08913DD508C00D5AEC3 /* XPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08713DD508C00D5AEC3 /* XPCConnection.m */; };
 		1EEDD08C13DDC34800D5AEC3 /* NSDictionary+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08A13DDC34800D5AEC3 /* NSDictionary+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -146,7 +146,7 @@
 			dstPath = Contents/XPCServices;
 			dstSubfolderSpec = 1;
 			files = (
-				1EEDD08513DD498900D5AEC3 /* com.mustacheware.TestService.xpc in Copy Services */,
+				1EEDD08513DD498900D5AEC3 /* com.illumineX.TestService.xpc in Copy Services */,
 			);
 			name = "Copy Services";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +176,7 @@
 		1EEDD06813DD48BB00D5AEC3 /* TestAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAppAppDelegate.h; sourceTree = "<group>"; };
 		1EEDD06913DD48BB00D5AEC3 /* TestAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAppAppDelegate.m; sourceTree = "<group>"; };
 		1EEDD06C13DD48BC00D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1EEDD07513DD48D800D5AEC3 /* com.mustacheware.TestService.xpc */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.mustacheware.TestService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EEDD07513DD48D800D5AEC3 /* com.illumineX.TestService.xpc */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.illumineX.TestService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEDD07813DD48D800D5AEC3 /* TestService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestService-Info.plist"; sourceTree = "<group>"; };
 		1EEDD07A13DD48D800D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1EEDD07C13DD48D800D5AEC3 /* TestService-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestService-Prefix.pch"; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 				1EEDD02813DD485400D5AEC3 /* libXPCKit.a */,
 				1EEDD03C13DD485400D5AEC3 /* XPCKitTests.octest */,
 				1EEDD05913DD48BB00D5AEC3 /* TestApp.app */,
-				1EEDD07513DD48D800D5AEC3 /* com.mustacheware.TestService.xpc */,
+				1EEDD07513DD48D800D5AEC3 /* com.illumineX.TestService.xpc */,
 				1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */,
 			);
 			name = Products;
@@ -562,7 +562,7 @@
 			);
 			name = TestService;
 			productName = TestService;
-			productReference = 1EEDD07513DD48D800D5AEC3 /* com.mustacheware.TestService.xpc */;
+			productReference = 1EEDD07513DD48D800D5AEC3 /* com.illumineX.TestService.xpc */;
 			productType = "com.apple.product-type.bundle";
 		};
 		1EEDD0CE13DE9FAB00D5AEC3 /* XPCKit */ = {
@@ -590,7 +590,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = Mustacheware;
+				ORGANIZATIONNAME = illumineX;
 			};
 			buildConfigurationList = 1EEDD02213DD485400D5AEC3 /* Build configuration list for PBXProject "XPCKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -986,7 +986,7 @@
 					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${EXECUTABLE_NAME}";
-				PRODUCT_NAME = "com.mustacheware.$(TARGET_NAME)";
+				PRODUCT_NAME = "com.illumineX.$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = xpc;
 			};
@@ -1008,7 +1008,7 @@
 					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${EXECUTABLE_NAME}";
-				PRODUCT_NAME = "com.mustacheware.$(TARGET_NAME)";
+				PRODUCT_NAME = "com.illumineX.$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = xpc;
 			};
@@ -1024,8 +1024,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
 				INFOPLIST_FILE = "XPCKit/XPCKit-Info.plist";
-				INSTALL_PATH = "@rpath";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.illumineX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1043,6 +1042,7 @@
 				INFOPLIST_FILE = "XPCKit/XPCKit-Info.plist";
 				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.illumineX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
