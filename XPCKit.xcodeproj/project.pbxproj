@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		1E5F84A813E10DB700234F31 /* XPCService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5F84A613E10DB700234F31 /* XPCService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E5F84A913E10DB700234F31 /* XPCService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5F84A613E10DB700234F31 /* XPCService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E5F84AA13E10DB700234F31 /* XPCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F84A713E10DB700234F31 /* XPCService.m */; };
+		1E5F84AA13E10DB700234F31 /* XPCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F84A713E10DB700234F31 /* XPCService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E5F84AB13E10DB700234F31 /* XPCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F84A713E10DB700234F31 /* XPCService.m */; };
 		1E835CB113DF748000338391 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1E835CB313DF74BF00338391 /* XPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */; };
 		1E835CB513DF74C900338391 /* XPCKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1EB022A5141D9F3700BCC1FB /* NSDate+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EB022A3141D9F3700BCC1FB /* NSDate+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EB022A6141D9F3700BCC1FB /* NSDate+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EB022A3141D9F3700BCC1FB /* NSDate+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EB022A7141D9F3700BCC1FB /* NSDate+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB022A4141D9F3700BCC1FB /* NSDate+XPCParse.m */; };
+		1EB022A7141D9F3700BCC1FB /* NSDate+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB022A4141D9F3700BCC1FB /* NSDate+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1EB022A8141D9F3700BCC1FB /* NSDate+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB022A4141D9F3700BCC1FB /* NSDate+XPCParse.m */; };
 		1EEDD03E13DD485400D5AEC3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD03D13DD485400D5AEC3 /* SenTestingKit.framework */; };
 		1EEDD04813DD485400D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD04613DD485400D5AEC3 /* InfoPlist.strings */; };
@@ -49,20 +49,20 @@
 		1EEDD0B713DE79D200D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD0D613DE9FAB00D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0D413DE9FAB00D5AEC3 /* InfoPlist.strings */; };
-		1EEDD0DE13DEA04900D5AEC3 /* NSObject+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09813DDC8A300D5AEC3 /* NSObject+XPCParse.m */; };
-		1EEDD0DF13DEA04900D5AEC3 /* NSDictionary+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08B13DDC34800D5AEC3 /* NSDictionary+XPCParse.m */; };
-		1EEDD0E013DEA04900D5AEC3 /* NSArray+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B113DE684300D5AEC3 /* NSArray+XPCParse.m */; };
-		1EEDD0E113DEA04900D5AEC3 /* NSNumber+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09013DDC48800D5AEC3 /* NSNumber+XPCParse.m */; };
-		1EEDD0E213DEA04900D5AEC3 /* NSData+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0A313DE65F800D5AEC3 /* NSData+XPCParse.m */; };
-		1EEDD0E313DEA04900D5AEC3 /* NSString+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0AB13DE669D00D5AEC3 /* NSString+XPCParse.m */; };
-		1EEDD0E413DEA04900D5AEC3 /* XPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08713DD508C00D5AEC3 /* XPCConnection.m */; };
+		1EEDD0DE13DEA04900D5AEC3 /* NSObject+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09813DDC8A300D5AEC3 /* NSObject+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1EEDD0DF13DEA04900D5AEC3 /* NSDictionary+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08B13DDC34800D5AEC3 /* NSDictionary+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1EEDD0E013DEA04900D5AEC3 /* NSArray+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B113DE684300D5AEC3 /* NSArray+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1EEDD0E113DEA04900D5AEC3 /* NSNumber+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09013DDC48800D5AEC3 /* NSNumber+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1EEDD0E213DEA04900D5AEC3 /* NSData+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0A313DE65F800D5AEC3 /* NSData+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1EEDD0E313DEA04900D5AEC3 /* NSString+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0AB13DE669D00D5AEC3 /* NSString+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1EEDD0E413DEA04900D5AEC3 /* XPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08713DD508C00D5AEC3 /* XPCConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1EEDD0E913DEA07700D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0EA13DEA08E00D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0EC13DEA0A400D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */; };
 		1EEDD0EE13DEB02000D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0ED13DEB01F00D5AEC3 /* Foundation.framework */; };
 		1EEDD0F113DEB97000D5AEC3 /* XPCUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD0F213DEB97000D5AEC3 /* XPCUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EEDD0F313DEB97000D5AEC3 /* XPCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */; };
+		1EEDD0F313DEB97000D5AEC3 /* XPCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1EEDD0F413DEB97000D5AEC3 /* XPCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */; };
 		1EF4D9D4141C36AA007BEEC0 /* NSObject+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD09713DDC8A300D5AEC3 /* NSObject+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EF4D9D5141C36AA007BEEC0 /* NSDictionary+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08A13DDC34800D5AEC3 /* NSDictionary+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,21 +76,21 @@
 		1EF4D9DD141C36AA007BEEC0 /* XPCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08613DD508C00D5AEC3 /* XPCConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EF4D9E1141C38D0007BEEC0 /* NSFileHandle+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF4D9DF141C38D0007BEEC0 /* NSFileHandle+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EF4D9E2141C38D0007BEEC0 /* NSFileHandle+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF4D9DF141C38D0007BEEC0 /* NSFileHandle+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EF4D9E3141C38D0007BEEC0 /* NSFileHandle+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF4D9E0141C38D0007BEEC0 /* NSFileHandle+XPCParse.m */; };
+		1EF4D9E3141C38D0007BEEC0 /* NSFileHandle+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF4D9E0141C38D0007BEEC0 /* NSFileHandle+XPCParse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1EF4D9E4141C38D0007BEEC0 /* NSFileHandle+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF4D9E0141C38D0007BEEC0 /* NSFileHandle+XPCParse.m */; };
 		1EF4D9E7141C3EEE007BEEC0 /* TestService.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 1EF4D9E6141C3EEE007BEEC0 /* TestService.entitlements */; };
 		300687CA14EA62B2006E8070 /* XPCMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 300687C814EA62B2006E8070 /* XPCMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		300687CB14EA62B2006E8070 /* XPCMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 300687C814EA62B2006E8070 /* XPCMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		300687CC14EA62B2006E8070 /* XPCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 300687C914EA62B2006E8070 /* XPCMessage.m */; };
+		300687CC14EA62B2006E8070 /* XPCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 300687C914EA62B2006E8070 /* XPCMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		300687CD14EA62B2006E8070 /* XPCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 300687C914EA62B2006E8070 /* XPCMessage.m */; };
-		30DE545D150790C200C06806 /* XPCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DE545C150790C200C06806 /* XPCUtilities.m */; };
+		30DE545D150790C200C06806 /* XPCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DE545C150790C200C06806 /* XPCUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		30DE545E150790C200C06806 /* XPCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DE545C150790C200C06806 /* XPCUtilities.m */; };
 		30DE54631507A9B300C06806 /* Multiplier.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DE54621507A9B300C06806 /* Multiplier.m */; };
 		30DE54641507CCB200C06806 /* Multiplier.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DE54621507A9B300C06806 /* Multiplier.m */; };
 		30DE54661508EFD200C06806 /* XPCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DE54651508EFD200C06806 /* XPCUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30DF8D5514EBC03900E5E876 /* XPCMessage+XPCKitInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DF8D5314EBC03900E5E876 /* XPCMessage+XPCKitInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		30DF8D5614EBC03900E5E876 /* XPCMessage+XPCKitInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DF8D5314EBC03900E5E876 /* XPCMessage+XPCKitInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		30DF8D5714EBC03900E5E876 /* XPCMessage+XPCKitInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF8D5414EBC03900E5E876 /* XPCMessage+XPCKitInternal.m */; };
+		30DF8D5714EBC03900E5E876 /* XPCMessage+XPCKitInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF8D5414EBC03900E5E876 /* XPCMessage+XPCKitInternal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		30DF8D5814EBC03900E5E876 /* XPCMessage+XPCKitInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF8D5414EBC03900E5E876 /* XPCMessage+XPCKitInternal.m */; };
 		30E9DAFF14ED12480070A6A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E9DAFE14ED12480070A6A4 /* Security.framework */; };
 		30E9DB0114ED139F0070A6A4 /* XPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */; };
@@ -1017,6 +1017,7 @@
 		1EEDD0DC13DE9FAB00D5AEC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1033,6 +1034,7 @@
 		1EEDD0DD13DE9FAB00D5AEC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
