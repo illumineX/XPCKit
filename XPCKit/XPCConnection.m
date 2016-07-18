@@ -31,7 +31,7 @@
 
 @synthesize eventHandler=_eventHandler, dispatchQueue=_dispatchQueue, replyDispatchQueue=_replyDispatchQueue, connection=_connection;
 
-- (id)initWithServiceName:(NSString *)serviceName{
+- (instancetype)initWithServiceName:(NSString *)serviceName{
 	xpc_connection_t connection = xpc_connection_create([serviceName cStringUsingEncoding:NSUTF8StringEncoding], NULL);
 	self = [self initWithConnection:connection];
     if (connection) {
@@ -40,7 +40,7 @@
 	return self;
 }
 
--(id)initWithConnection:(xpc_connection_t)connection{
+-(instancetype)initWithConnection:(xpc_connection_t)connection{
 	if(!connection){
 		[self release];
 		return nil;
@@ -259,7 +259,7 @@
 		name = (char*)xpc_connection_get_name(_connection);
 	});
 	if(!name) return nil;
-	return [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
+	return @(name);
 }
 
 -(NSNumber *)connectionEUID{
@@ -267,7 +267,7 @@
 	dispatch_sync(self.dispatchQueue, ^{
 		uid = xpc_connection_get_euid(_connection);
 	});
-	return [NSNumber numberWithUnsignedInt:uid];
+	return @(uid);
 }
 
 -(NSNumber *)connectionEGID{
@@ -275,7 +275,7 @@
 	dispatch_sync(self.dispatchQueue, ^{
 		egid = xpc_connection_get_egid(_connection);
 	});
-	return [NSNumber numberWithUnsignedInt:egid];
+	return @(egid);
 }
 
 -(NSNumber *)connectionProcessID{
@@ -312,11 +312,11 @@
 -(NSString *) description
 {
     return [NSString stringWithFormat:@"<%@(%@, %@, %@, %@)>",
-            [self className],
-            [self connectionName],
-            [self connectionProcessID],
-            [self connectionEUID],
-            [self connectionEGID]];
+            self.className,
+            self.connectionName,
+            self.connectionProcessID,
+            self.connectionEUID,
+            self.connectionEGID];
 }
 
 

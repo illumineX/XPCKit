@@ -22,6 +22,6 @@
 @interface NSNumber (XPCParse)
 
 +(NSNumber *)numberWithXPCObject:(xpc_object_t)xpc;
--(xpc_object_t)newXPCObject;
+@property (NS_NONATOMIC_IOSONLY, readonly) xpc_object_t newXPCObject;
 
 @end

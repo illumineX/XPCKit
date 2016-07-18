@@ -23,6 +23,6 @@
 @interface NSArray (XPCParse)
 
 +(NSArray *)arrayWithContentsOfXPCObject:(xpc_object_t)object;
--(xpc_object_t)newXPCObject;
+@property (NS_NONATOMIC_IOSONLY, readonly) xpc_object_t newXPCObject;
 
 @end

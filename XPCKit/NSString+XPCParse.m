@@ -22,7 +22,7 @@
 @implementation NSString (XPCParse)
 
 +(NSString *)stringWithXPCObject:(xpc_object_t)xpc{
-    return [NSString stringWithUTF8String:xpc_string_get_string_ptr(xpc)];
+    return @(xpc_string_get_string_ptr(xpc));
 }
 
 -(xpc_object_t)newXPCObject{

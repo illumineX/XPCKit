@@ -63,7 +63,7 @@
 
 
 -(xpc_object_t)newXPCObject{
-    return xpc_data_create([self bytes], [self length]);
+    return xpc_data_create(self.bytes, self.length);
 }
 
 @end

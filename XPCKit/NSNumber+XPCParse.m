@@ -26,13 +26,13 @@
     NSNumber * object = nil;
     xpc_type_t type = xpc_get_type(xpc);
     if(type == XPC_TYPE_BOOL){
-        object = [NSNumber numberWithBool:xpc_bool_get_value(xpc)];
+        object = @(xpc_bool_get_value(xpc));
     }else if(type == XPC_TYPE_UINT64){
-        object = [NSNumber numberWithUnsignedLongLong:xpc_uint64_get_value(xpc)];
+        object = @(xpc_uint64_get_value(xpc));
     }else if(type == XPC_TYPE_INT64){
-        object = [NSNumber numberWithLongLong:xpc_int64_get_value(xpc)];
+        object = @(xpc_int64_get_value(xpc));
     }else if(type == XPC_TYPE_DOUBLE){
-        object = [NSNumber numberWithDouble:xpc_double_get_value(xpc)];
+        object = @(xpc_double_get_value(xpc));
     }
 	
     return object;
@@ -44,13 +44,13 @@
     }else if(self == (NSNumber *)kCFBooleanFalse){
         return xpc_bool_create(false);
     }else{
-        const char* objCType = [self objCType];
+        const char* objCType = self.objCType;
         if(strcmp(objCType, @encode(unsigned long)) == 0){
-            return xpc_uint64_create([self unsignedLongLongValue]);
+            return xpc_uint64_create(self.unsignedLongLongValue);
         }else if(strcmp(objCType, @encode(long)) == 0){
-            return xpc_int64_create([self longLongValue]);
+            return xpc_int64_create(self.longLongValue);
         }else{
-            return xpc_double_create([self doubleValue]);
+            return xpc_double_create(self.doubleValue);
         }
     }
     return NULL;

@@ -30,7 +30,7 @@
 }
 
 -(xpc_object_t)newXPCObject{
-	return xpc_date_create((int64_t)([self timeIntervalSince1970] * 1000000000));
+	return xpc_date_create((int64_t)(self.timeIntervalSince1970 * 1000000000));
 }
 
 @end

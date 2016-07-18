@@ -40,13 +40,13 @@
 
 #pragma mark - Lifecycle
 
-+ (id)message
++ (instancetype)message
 {
     return [[[XPCMessage alloc] init] autorelease];
 }
 
 
-+ (id)messageWithXPCDictionary:(xpc_object_t)inXPCDictionary
++ (instancetype)messageWithXPCDictionary:(xpc_object_t)inXPCDictionary
 {
     return [[[XPCMessage alloc] initWithXPCDictionary:inXPCDictionary] autorelease];
 }
@@ -60,25 +60,25 @@
 // Initialize a message that is supposed to be the reply to inOriginalMessage.
 // See xpc_dictionary_create_reply() for details.
 
-+ (id)messageReplyForMessage:(XPCMessage *)inOriginalMessage
++ (instancetype)messageReplyForMessage:(XPCMessage *)inOriginalMessage
 {
     return [[[XPCMessage alloc] initReplyForMessage:inOriginalMessage] autorelease];
 }
 
 
-+ (id)messageWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys
++ (instancetype)messageWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys
 {
     return [[[XPCMessage alloc] initWithObjects:inObjects forKeys:inKeys] autorelease];
 }
 
 
-+ (id)messageWithObject:(id)inObject forKey:(NSString *)inKey
++ (instancetype)messageWithObject:(id)inObject forKey:(NSString *)inKey
 {
     return [[[XPCMessage alloc] initWithObject:inObject forKey:inKey] autorelease];
 }
 
 
-+ (id)messageWithObjectsAndKeys:(id)firstObject, ...
++ (instancetype)messageWithObjectsAndKeys:(id)firstObject, ...
 {
     XPCMessage *this = [XPCMessage alloc];
     va_list argumentList;
@@ -93,7 +93,7 @@
 
 // Returns a message that is suited for invocation
 
-+ (id)messageWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject
++ (instancetype)messageWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject
 {
     return [[[XPCMessage alloc] initWithSelector:inSelector target:inTarget object:inObject] autorelease];
 }
@@ -102,7 +102,7 @@
 
 // First designated initializer
 
-- (id)initWithXPCDictionary:(xpc_object_t)inXPCDictionary
+- (instancetype)initWithXPCDictionary:(xpc_object_t)inXPCDictionary
 {
     if ((self = [super init]))
     {
@@ -139,7 +139,7 @@
 // to a generic event handler).
 // See also xpc_dictionary_create_reply().
 
-- (id)initReplyForMessage:(XPCMessage *)inOriginalMessage
+- (instancetype)initReplyForMessage:(XPCMessage *)inOriginalMessage
 {
         if (inOriginalMessage)
         {
@@ -153,7 +153,7 @@
 
 // Initialize a message that is suited for invocation
 
-- (id)initWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject
+- (instancetype)initWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject
 {
     return [self initWithObjectsAndKeys:
             inTarget,   @"target",
@@ -163,25 +163,25 @@
 }
 
 
-- (id)initWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys
+- (instancetype)initWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys
 {
     if ((self = [self init]))
     {
         id object = nil;
         id key = nil;
         
-        if ([inObjects count] != [inKeys count]) {
+        if (inObjects.count != inKeys.count) {
             [NSException raise:NSInvalidArgumentException format:@"Objects and keys don't match in numbers"];
         }
-        for (NSUInteger i = 0; i < [inObjects count]; i++)
+        for (NSUInteger i = 0; i < inObjects.count; i++)
         {
-            object = [inObjects objectAtIndex:i];
+            object = inObjects[i];
             
-            if ([(key = [inKeys objectAtIndex:i]) isKindOfClass:[NSString class]])
+            if ([(key = inKeys[i]) isKindOfClass:[NSString class]])
             {
                 [self setObject:object forKey:key];
             } else {
-                [NSException raise:NSInvalidArgumentException format:@"Trying to initialize %@ with %@ key. Key must be of NSString", [self className], key];
+                [NSException raise:NSInvalidArgumentException format:@"Trying to initialize %@ with %@ key. Key must be of NSString", self.className, key];
             }
             
         }
@@ -190,9 +190,9 @@
 }
 
 
-- (id)initWithObject:(id)inObject forKey:(NSString *)inKey
+- (instancetype)initWithObject:(id)inObject forKey:(NSString *)inKey
 {
-    return [self initWithObjects:[NSArray arrayWithObject:inObject] forKeys:[NSArray arrayWithObject:inKey]];
+    return [self initWithObjects:@[inObject] forKeys:@[inKey]];
 }
 
 
@@ -217,7 +217,7 @@
 }
 
 
-- (id)initWithObjectsAndKeys:(id)firstObject, ...
+- (instancetype)initWithObjectsAndKeys:(id)firstObject, ...
 {
     va_list argumentList;
     
@@ -229,7 +229,7 @@
 }
 
 
-- (id)init
+- (instancetype)init
 {
     return [self initWithXPCDictionary:NULL];
 }
@@ -345,25 +345,25 @@
 
 - (void) setBool:(BOOL)inValue forKey:(NSString *)inKey
 {
-    [self setObject:[NSNumber numberWithBool:inValue] forKey:inKey];
+    [self setObject:@(inValue) forKey:inKey];
 }
 
 
 - (void) setDouble:(double)inValue forKey:(NSString *)inKey
 {
-    [self setObject:[NSNumber numberWithDouble:inValue] forKey:inKey];
+    [self setObject:@(inValue) forKey:inKey];
 }
 
 
 - (void) setFloat:(float)inValue forKey:(NSString *)inKey
 {
-    [self setObject:[NSNumber numberWithFloat:inValue] forKey:inKey];
+    [self setObject:@(inValue) forKey:inKey];
 }
 
 
 - (void) setInteger:(NSInteger)inValue forKey:(NSString *)inKey
 {
-    [self setObject:[NSNumber numberWithInteger:inValue] forKey:inKey];
+    [self setObject:@(inValue) forKey:inKey];
 }
 
 
@@ -413,7 +413,7 @@
     NSMutableString *description = [NSMutableString stringWithFormat:@"\n{\n"];
     
     xpc_dictionary_apply(_XPCDictionary, ^bool(const char *inKey, xpc_object_t inValue){
-        NSString *key = [NSString stringWithCString:inKey encoding:NSUTF8StringEncoding];
+        NSString *key = @(inKey);
         id value = [NSObject objectWithXPCObject:inValue];
         if(key && value)
         {

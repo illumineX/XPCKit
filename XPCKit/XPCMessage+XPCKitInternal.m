@@ -55,20 +55,20 @@
 - (BOOL) needsDirectReply
 {
     NSNumber *directReply = nil;
-    return (directReply = [self objectForKey:XPC_DIRECT_REPLY_KEY]) && [directReply boolValue];
+    return (directReply = [self objectForKey:XPC_DIRECT_REPLY_KEY]) && directReply.boolValue;
 }
 
 
 - (void) setNeedsDirectReply:(BOOL)inDirectReply
 {
-    [self setObject:[NSNumber numberWithBool:inDirectReply] forKey:XPC_DIRECT_REPLY_KEY];
+    [self setObject:@(inDirectReply) forKey:XPC_DIRECT_REPLY_KEY];
 }
 
 
 - (XPCLogLevel) logLevel
 {
     NSNumber *logLevel = [self objectForKey:XPC_LOG_LEVEL_KEY];
-    return logLevel ? [logLevel unsignedIntValue] : XPCLogLevelErrors;
+    return logLevel ? logLevel.unsignedIntValue : XPCLogLevelErrors;
 }
 
 

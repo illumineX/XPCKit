@@ -105,14 +105,14 @@
 }
 
 -(BOOL)isEqual:(id)object{
-	return [[self description] isEqual:[object description]];
+	return [self.description isEqual:[object description]];
 }
 
 -(NSUInteger)hash{
-	return [[self description] hash];
+	return self.description.hash;
 }
 
-- (id)initWithUUIDRef:(CFUUIDRef)uuidRef{
+- (instancetype)initWithUUIDRef:(CFUUIDRef)uuidRef{
     self = [super init];
     if (self) {
         // Initialization code here.

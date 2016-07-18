@@ -30,7 +30,7 @@ static void XPCServiceConnectionHandler(xpc_connection_t handler){
 
 @synthesize connectionHandler, connections=_connections;
 
--(id)initWithConnectionHandler:(XPCConnectionHandler)aConnectionHandler
+-(instancetype)initWithConnectionHandler:(XPCConnectionHandler)aConnectionHandler
 {
     self = [super init];
     if (self) {
@@ -40,7 +40,7 @@ static void XPCServiceConnectionHandler(xpc_connection_t handler){
 														  object:nil 
 														   queue:[NSOperationQueue mainQueue]
 													  usingBlock:^(NSNotification *note) {
-														  XPCConnection *connection = [note object];
+														  XPCConnection *connection = note.object;
 														  [self handleConnection:connection];
 													  }];
     }

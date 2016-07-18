@@ -24,6 +24,6 @@
 
 +(NSData *)dataWithXPCObject:(xpc_object_t)xpc;
 +(id)objectWithXPCObject:(xpc_object_t)xpcObject;
--(xpc_object_t)newXPCObject;
+@property (NS_NONATOMIC_IOSONLY, readonly) xpc_object_t newXPCObject;
 
 @end

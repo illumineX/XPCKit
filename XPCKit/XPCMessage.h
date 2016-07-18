@@ -35,20 +35,20 @@ extern const char *XPCMessageErrorKey;
     xpc_object_t _XPCDictionary;
 }
 
-+ (id)message;
-+ (id)messageWithXPCDictionary:(xpc_object_t)inXPCDictionary;
-+ (id)messageReplyForMessage:(XPCMessage *)inOriginalMessage;
-+ (id)messageWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys;
-+ (id)messageWithObject:(id)inObject forKey:(NSString *)inKey;
-+ (id)messageWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
-+ (id)messageWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject;
++ (instancetype)message;
++ (instancetype)messageWithXPCDictionary:(xpc_object_t)inXPCDictionary;
++ (instancetype)messageReplyForMessage:(XPCMessage *)inOriginalMessage;
++ (instancetype)messageWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys;
++ (instancetype)messageWithObject:(id)inObject forKey:(NSString *)inKey;
++ (instancetype)messageWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
++ (instancetype)messageWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject;
 
-- (id)initWithXPCDictionary:(xpc_object_t)inXPCDictionary;
-- (id)initReplyForMessage:(XPCMessage *)inOriginalMessage;
-- (id)initWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys;
-- (id)initWithObject:(id)inObject forKey:(NSString *)inKey;
-- (id)initWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
-- (id)initWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject;
+- (instancetype)initWithXPCDictionary:(xpc_object_t)inXPCDictionary NS_DESIGNATED_INITIALIZER;
+- (instancetype)initReplyForMessage:(XPCMessage *)inOriginalMessage;
+- (instancetype)initWithObjects:(NSArray *)inObjects forKeys:(NSArray *)inKeys;
+- (instancetype)initWithObject:(id)inObject forKey:(NSString *)inKey;
+- (instancetype)initWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
+- (instancetype)initWithSelector:(SEL)inSelector target:(id)inTarget object:(id)inObject;
 
 - (id)objectForKey:(NSString *)inKey;
 
@@ -76,7 +76,7 @@ extern const char *XPCMessageErrorKey;
 // Returns whether this message is invocable
 // (i.e. contains target and selector and optionally an argument object)
 
-- (BOOL) invocable;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL invocable;
 
-- (XPCMessage *) invoke;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) XPCMessage *invoke;
 @end

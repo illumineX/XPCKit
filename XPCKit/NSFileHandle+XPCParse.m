@@ -28,7 +28,7 @@
 }
 
 -(xpc_object_t)newXPCObject{
-	int fd = [self fileDescriptor];
+	int fd = self.fileDescriptor;
 	xpc_object_t object = xpc_fd_create(fd);
 	return object;
 }

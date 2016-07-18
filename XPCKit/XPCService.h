@@ -30,7 +30,7 @@
 @property (nonatomic, readonly) NSArray *connections;
 
 +(void)runServiceWithConnectionHandler:(XPCConnectionHandler)connectionHandler;
--(id)initWithConnectionHandler:(XPCConnectionHandler)connectionHandler;
+-(instancetype)initWithConnectionHandler:(XPCConnectionHandler)connectionHandler NS_DESIGNATED_INITIALIZER;
 
 -(void)handleConnection:(XPCConnection *)connection;
 

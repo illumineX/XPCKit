@@ -22,6 +22,6 @@
 @interface NSDate (NSDate_XPCParse)
 
 +(NSDate *)dateWithXPCObject:(xpc_object_t)xpc;
--(xpc_object_t)newXPCObject;
+@property (NS_NONATOMIC_IOSONLY, readonly) xpc_object_t newXPCObject;
 
 @end

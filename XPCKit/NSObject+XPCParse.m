@@ -23,7 +23,7 @@
 
 @implementation NSObject (XPCParse)
 
-+(id)objectWithXPCObject:(xpc_object_t)xpcObject{
++(instancetype)objectWithXPCObject:(xpc_object_t)xpcObject{
     id object = nil;
     xpc_type_t type = xpc_get_type(xpcObject);
     if(type == XPC_TYPE_DICTIONARY){
@@ -59,7 +59,7 @@
     if ([self conformsToProtocol:@protocol(NSCoding)])
     {
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
-        return xpc_data_create([data bytes], [data length]);
+        return xpc_data_create(data.bytes, data.length);
     } else {
         // There is no way to convert self into an xpc_object_t object
         

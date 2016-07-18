@@ -29,8 +29,8 @@
 	dispatch_queue_t _replyDispatchQueue;
 }
 
-- (id)initWithServiceName:(NSString *)serviceName;
-- (id)initWithConnection: (xpc_connection_t)connection;
+- (instancetype)initWithServiceName:(NSString *)serviceName;
+- (instancetype)initWithConnection: (xpc_connection_t)connection NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, copy)   XPCEventHandler eventHandler;
 
