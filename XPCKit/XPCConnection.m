@@ -31,6 +31,14 @@
 
 @synthesize eventHandler=_eventHandler, dispatchQueue=_dispatchQueue, replyDispatchQueue=_replyDispatchQueue, connection=_connection;
 
+- (instancetype)init
+{
+    self = [self initWithServiceName:@"Default"];
+    if (self) {
+    }
+    return self;
+}
+
 - (instancetype)initWithServiceName:(NSString *)serviceName{
 	xpc_connection_t connection = xpc_connection_create([serviceName cStringUsingEncoding:NSUTF8StringEncoding], NULL);
 	self = [self initWithConnection:connection];

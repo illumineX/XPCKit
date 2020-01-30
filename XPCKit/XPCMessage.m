@@ -117,7 +117,7 @@
 
 - (id)_initReplyForMessage:(XPCMessage *)inOriginalMessage
 {
-    if ((self = [super init]))
+    if ((self = [self init]))
     {
         if ([inOriginalMessage needsDirectReply])
         {

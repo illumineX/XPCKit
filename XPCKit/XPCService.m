@@ -30,6 +30,14 @@ static void XPCServiceConnectionHandler(xpc_connection_t handler){
 
 @synthesize connectionHandler, connections=_connections;
 
+- (instancetype)init
+{
+    self = [self initWithConnectionHandler:nil];
+    if (self) {
+    }
+    return self;
+}
+
 -(instancetype)initWithConnectionHandler:(XPCConnectionHandler)aConnectionHandler
 {
     self = [super init];
