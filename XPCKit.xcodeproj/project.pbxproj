@@ -175,7 +175,6 @@
 		1EEDD06613DD48BB00D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		1EEDD06813DD48BB00D5AEC3 /* TestAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAppAppDelegate.h; sourceTree = "<group>"; };
 		1EEDD06913DD48BB00D5AEC3 /* TestAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAppAppDelegate.m; sourceTree = "<group>"; };
-		1EEDD06C13DD48BC00D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1EEDD07513DD48D800D5AEC3 /* com.illumineX.TestService.xpc */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.illumineX.TestService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEDD07813DD48D800D5AEC3 /* TestService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestService-Info.plist"; sourceTree = "<group>"; };
 		1EEDD07A13DD48D800D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -219,6 +218,7 @@
 		30DF8D5314EBC03900E5E876 /* XPCMessage+XPCKitInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XPCMessage+XPCKitInternal.h"; sourceTree = "<group>"; };
 		30DF8D5414EBC03900E5E876 /* XPCMessage+XPCKitInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XPCMessage+XPCKitInternal.m"; sourceTree = "<group>"; };
 		30E9DAFE14ED12480070A6A4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C5A3762C23EF91A40051504E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -598,6 +598,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 1EEDD01D13DD485400D5AEC3;
 			productRefGroup = 1EEDD02913DD485400D5AEC3 /* Products */;
@@ -792,7 +793,7 @@
 		1EEDD06B13DD48BC00D5AEC3 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1EEDD06C13DD48BC00D5AEC3 /* en */,
+				C5A3762C23EF91A40051504E /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
